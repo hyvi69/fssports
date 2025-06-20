@@ -68,12 +68,16 @@ const App = () => {
   };
 const defaultMessage = "Hello! i want personalized pack.";
 const phoneNumber = "34614752842"; // Phone number without + sign
-  
+const defaultMessage2 = "Hello!  can i know more informations about full pack and price .";
+
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(defaultMessage);
     window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
   };
-
+const handleClick2 = () => {
+    const encodedMessage2 = encodeURIComponent(defaultMessage2);
+    window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage2}`, '_blank');
+  };
 
   const featuresList = [
     'Single Event Coverage',
@@ -149,11 +153,12 @@ const phoneNumber = "34614752842"; // Phone number without + sign
       <div id="about-section" className="about-section">
         <div id="2" class="image-card">
 <div className="header-section">
+  
         <h1  className="main-title">
           <span className="title-gold">The Story Of</span><br />
           <span className="title-white">Our Business</span> <span className="title-gold">Journey</span>
         </h1>
-
+</div>
         <div className="live-widget">
           <div className="live-header">
             <div className="live-dot"></div>
@@ -163,7 +168,7 @@ const phoneNumber = "34614752842"; // Phone number without + sign
             <div className="play-icon"></div>
           </div>
           <div className="audio-bars">
-            {[10, 20, 15, 25, 12, 18, 22, 8, 16, 20].map((h, i) => (
+            {[10, 20, 15, 25, 12, 18, 22, 8, 16, 20,13,17,20,1,20, 15, 25, 12,].map((h, i) => (
               <div
                 className="bar"
                 key={i}
@@ -172,7 +177,7 @@ const phoneNumber = "34614752842"; // Phone number without + sign
             ))}
           </div>
         </div>
-</div>
+
 
       <div className="content-grid">
         <div className="content-card">
@@ -282,78 +287,76 @@ const phoneNumber = "34614752842"; // Phone number without + sign
       
 
       <div id="why-section" className="why-section">
-        <div className="header-section2">
-          <h1 className="main-title">WHY FS sports</h1>
-          <p className="subtitle">Make Your Mark In the Sports Arena</p>
-        
-          <div className="why-content">
-            <div className="why-image">
-            <div className="equipment-section">
-            <div className="equipment-grid">
-              <div className="equipment-icons">
-                <div className="equipment-icon" title="Professional Photography">📷</div>
-                <div className="equipment-icon" title="Video Production">🎥</div>
-                <div className="equipment-icon" title="Live Streaming">💻</div>
-                <div className="equipment-icon" title="Multi-Camera Setup">📹</div>
-                <div className="equipment-icon" title="Post-Production">🎬</div>
-              </div>
-              <div className="padel-image">
-                <img src={why2} alt="Brand Visibility" className="padel-image" />
+  <div className="header-section2">
+    <h1 className="main-title">WHY FS sports</h1>
+    <p className="subtitle">Make Your Mark In the Sports Arena</p>
 
-                <div className="padel-text">
-                  
-                </div>
-                <div className="play-overlay">
-                  <div className="play-icon"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-            </div>
-            <div className="why-text">
-              <ul>
-                <li>
-                  <div className="why-title">
-                    <img src={liveIcon} alt="Live Streaming" className="why-icon" />
-                    <strong>Pioneers in Live Streaming</strong>
-                  </div>
-                  <p>First in Morocco to offer professional live broadcasting of padel matches — real-time, reliable, and high quality.
-                  </p>
-                </li>
-
-                <li>
-                  <div className="why-title">
-                    <img src={mediaIcon} alt="Media Powerhouse" className="why-icon" />
-                    <strong>All-in-One Media Powerhouse</strong>
-                  </div>
-                  <p>From 4K multi-angle coverage to content made for Reels and Stories, we've got your event covered end-to-end.
-                  </p>
-                </li>
-
-                <li>
-                  <div className="why-title">
-                    <img src={brandIcon} alt="Brand Visibility" className="why-icon" />
-                    <strong>Elevate Your Brand</strong>
-                  </div>
-                  <p>We help athletes, clubs, and organizers increase visibility and audience engagement through high-impact storytelling.
-                  </p>
-                </li>
-
-                <li>
-                  <div className="why-title">
-                    <img src={creativeIcon} alt="Creative Team" className="why-icon" />
-                    <strong>Creative. Reliable. Professional.</strong>
-                  </div>
-                  <p>Our passionate team combines technical skill and artistic flair to deliver media that truly represents the energy of sport.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <div className="why-layout">
+      {/* Left Column: Equipment Icons */}
+      <div className="equipment-icons">
+        <div className="equipment-icon" title="Professional Photography">📷</div>
+        <div className="equipment-icon" title="Video Production">🎥</div>
+        <div className="equipment-icon" title="Live Streaming">💻</div>
+        <div className="equipment-icon" title="Multi-Camera Setup">📹</div>
+        <div className="equipment-icon" title="Post-Production">🎬</div>
       </div>
 
+      {/* Center Column: Image */}
+      <div className="padel-image-container">
+        <img src={why2} alt="Padel Coverage" className="padel-image" />
+      </div>
 
+      {/* Right Column: Feature List */}
+      <div className="why-text">
+        <ul>
+          <li>
+            <div className="why-title">
+              <img src={liveIcon} alt="Live Streaming" className="why-icon" />
+              <strong>Pioneers in Live Streaming</strong>
+            </div>
+            <p>
+              First in Morocco to offer professional live broadcasting of padel matches —
+              real-time, reliable, and high quality.
+            </p>
+          </li>
+
+          <li>
+            <div className="why-title">
+              <img src={mediaIcon} alt="Media Powerhouse" className="why-icon" />
+              <strong>All-in-One Media Powerhouse</strong>
+            </div>
+            <p>
+              From 4K multi-angle coverage to content made for Reels and Stories, we've got
+              your event covered end-to-end.
+            </p>
+          </li>
+
+          <li>
+            <div className="why-title">
+              <img src={brandIcon} alt="Brand Visibility" className="why-icon" />
+              <strong>Elevate Your Brand</strong>
+            </div>
+            <p>
+              We help athletes, clubs, and organizers increase visibility and audience
+              engagement through high-impact storytelling.
+            </p>
+          </li>
+
+          <li>
+            <div className="why-title">
+              <img src={creativeIcon} alt="Creative Team" className="why-icon" />
+              <strong>Creative. Reliable. Professional.</strong>
+            </div>
+            <p>
+              Our passionate team combines technical skill and artistic flair to deliver media
+              that truly represents the energy of sport.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -407,7 +410,7 @@ const phoneNumber = "34614752842"; // Phone number without + sign
               <li>Analytics Dashboard</li>
               <li>Priority Support</li>
             </ul>
-            <button className="plan-button" onClick={handleClick}        >
+            <button className="plan-button" onClick={handleClick2}        >
           Start </button>
           </div>
         </div>
@@ -426,7 +429,7 @@ const phoneNumber = "34614752842"; // Phone number without + sign
 <div id="contact-section" className="contact-section">
   <div className="contact-wrapper">
     <h2>Get In Touch</h2>
-    <p>We’re ready to bring your vision to life. Reach out anytime!</p>
+    <p>Reach out anytime!</p>
     <div className="social-icons">
     <a href="https://wa.me/message/2B37VOFVTCYZF1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="icon whatsapp">
         <img src={whatsapp} alt="WhatsApp" style={{ width: '40px', height: '40px' }} />
@@ -440,11 +443,10 @@ const phoneNumber = "34614752842"; // Phone number without + sign
       <a href="https://youtube.com/@fs-sports433?si=H6MFKqM7_avDNRjp" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="icon youtube">
         <img src={youtube} alt="YouTube" style={{ width: '40px', height: '40px' }} />
       </a>
+     
     </div>
   </div>
 </div>
-
-
 
 
 
@@ -455,7 +457,10 @@ const phoneNumber = "34614752842"; // Phone number without + sign
 
 
 
+
+
     </div>
+    
   );
 };
 

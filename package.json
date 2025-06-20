@@ -1,6 +1,6 @@
 {
   "name": "app",
-  "homepage": "https://github.com/hyvi69/fssports/",
+  "homepage": "https://hyvi69.github.io/fssports/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "nmp run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

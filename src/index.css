@@ -12,8 +12,8 @@ body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+   width: auto;
+     height: auto;
   background-image: url('C:\Users\DELL\Documents\React\app\src\assets\back.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -22,12 +22,13 @@ body, html {
   overflow-y: auto;
   overflow-x: auto;
   scrollbar-width: none;
+  
 }
 
 /* ✨ Soft flowing overlay effect */
 body::after {
   content: '';
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   height: 100vh;
@@ -126,24 +127,58 @@ button:hover {
   outline: none;
 }
 
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;       /* Keep items side by side */
+    align-items: left;
+    justify-content: centre;
+    overflow-x: auto;          /* Allow horizontal scrolling if too wide */
+    padding: 0 1px;
+    white-space: nowrap; 
+    scrollbar-width: none;  
+     /* Prevent wrapping */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;          /* Scroll nav horizontally */
+    gap: 1px;
+    margin-left: 150px;
+    padding: auto;
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+
+  .nav-button {
+    white-space: nowrap;       /* Prevent button text wrapping */
+  }
+}
+
+
 .hero-title {
-            font-size: 50px;
-            font-weight: bold;
-            width: 1000px;
-            color: #fff;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: glow 2s ease-in-out infinite alternate;
-        }
- 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #ccc;
-            margin-bottom: 60px;
-            max-width: 800px;
-            line-height: 1.6;
-            margin-left: 100px;
-        }
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin: 0 auto 60px auto;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
  
         .cta-button {
             background: linear-gradient(45deg, #000000, #ffd700);
@@ -211,7 +246,7 @@ button:hover {
 
   .about-section {
     padding-top: 100px;
-    height: 100%;
+    
     background-color: rgba(0, 0, 0, 0.5);
     color: #f5f5f5;
     flex-direction: column;
@@ -222,10 +257,10 @@ button:hover {
     backdrop-filter: blur(6px);
     border-radius: 16px;
     margin: 0px ;
-    width: 1420px;
+     width: auto;
+     height: auto;
      
-  margin-left: -100px;
-  margin-right: -130px;
+  
   
     
   }
@@ -345,182 +380,170 @@ button:hover {
 }
 
  
-  .why-section{
-    background-color:#FFD23F; 
-    height: 80%;
-    color: #000000;
+ .why-section {
+  background-color: #FFD23F;
+  height: auto;
+  color: #000000;
+  flex-direction: column;
+  padding: 40px 20px;
+  z-index: 1;
+  font-family: 'Poppins', sans-serif;
+  scroll-margin-top: 100px;
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  width: auto;
+  margin-top: 100px;
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.why-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Equipment Icons */
+.equipment-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.equipment-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.equipment-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  transition: left 0.3s ease;
+}
+
+.equipment-icon:hover::before {
+  left: 100%;
+}
+
+.equipment-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Image */
+.padel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.padel-image {
+  margin-top: 40px;
+  border-radius: 15px;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Feature Text */
+.why-text {
+  max-width: 600px;
+}
+
+.why-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.why-text li {
+  margin-bottom: 20px;
+}
+
+.why-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.why-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.why-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-layout {
     flex-direction: column;
-    padding: 20px 20px;
-    z-index: 1;
-    font-family: 'Poppins', sans-serif;
-    scroll-margin-top: 100px;
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    margin: 0px ;
-    width: 100%;
-    margin-top: 100px;
-
+    align-items: center;
+    text-align: center;
   }
-  
-        .main-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #000000;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-             margin-top: 10px;
-             text-align: center;
-          }
- 
-        .subtitle {
-            font-size: 1.8rem;
-            color: #000000;
-            font-weight: 600;
-            margin-top: 10px;
-        }
- 
-       
- 
-        /* Left side - Media equipment */
-        .equipment-section {
-             align-items: center;
-            justify-content: center;
-            text-align: center;
-            display: flex;
 
-        }
- 
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 20px;
-            align-items: center;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            
-        }
- 
-        .equipment-icons {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 50px;
-            
-        }
- 
-        .equipment-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(0,0,0,8);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            display: flex;
-            margin-top: 0px;
-        }
- 
-        .equipment-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
-            transition: left 0.3s ease;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            
-        }
- 
-        .equipment-icon:hover::before {
-           left: 100%; 
-        }
- 
-        .equipment-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
- 
-        
- 
-       
- 
-        
-        
- 
-        /* Right side - Features */
-        
-
-  
-
-    .padel-image {
-   
-   
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
-    font-size: 18px;
-    width: 400px;       
-    height: 300px;
-    border-radius: 8px; 
-    margin-right: 750px; 
-    margin-top: 40px;
-    
-  }
-  .why-text ul {
-    list-style: none;
-    padding: 0;
-    margin-top:-400px
-  }
-  
-  .why-text li {
-    margin-bottom: 20px;
-  }
-  
   .why-title {
-    display: flex;
-    gap: 12px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-left: 600px;
-    margin-bottom: 5px;
-   
-   
-    
+    justify-content: center;
   }
-  
-  .why-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-  }
-  
-  .why-text p {
-    margin-left: 600px;
-    text-align:left ;
-    font-weight: normal;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
 
+  .why-text p,
+  .why-title {
+    margin-left: 0 !important;
+  }
 
+  .padel-image {
+    width: 100%;
+    height: auto;
+  }
+}
 
   
 
 .pricing-section {
   background-color: rgba(0, 0, 0, 0.6); /* #FFD23F with 80% opacity */
-    height: 80%;
+    height: auto;
     color: #000000;
     flex-direction: column;
     padding: 20px 20px;
@@ -530,12 +553,14 @@ button:hover {
     backdrop-filter: blur(8px);
     border-radius: 16px;
     margin: 0px ;
-    width: 100%;
+    width: auto;
+     height: auto;
     margin-top: 100px;
+    
   
 }
  .pricing-container {
-  position: relative;
+ 
   z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
@@ -585,6 +610,13 @@ button:hover {
   transition: all 0.4s ease;
   overflow: hidden;
   height: 550px;
+}
+@media screen {
+  .plan-card{
+    width: auto;
+    height:auto;
+  }
+  
 }
 
 .plan-card::before {
@@ -645,7 +677,7 @@ button:hover {
 .plan-features {
   list-style: none;
   margin: 2rem 0;
-  padding: 0;
+  padding: 10px;
 }
 
 .plan-features li {
@@ -692,6 +724,9 @@ button:hover {
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 100px;
+ 
+  margin-bottom: 100px;
 }
 
 .plan-button::before {
@@ -712,6 +747,8 @@ button:hover {
 
 .plan-button:hover::before {
   left: 100%;
+  
+  
 }
 
 .secondary-btn {
@@ -884,30 +921,44 @@ button:hover {
   background-color: #000;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #FFD23F;
   text-align: center;
   font-size: 1rem;
   border-top: 1px solid #FFD23F;
   margin-bottom: -50px;
-  margin-left: -400px;
+  margin-left: -130px;
   height: 80px;
-  width: 2000px;
+  width: 1540px;
   position: relative;
   left: 0;
   bottom: 0;
+  }
+  @media (max-width: 600px) {
+  .footer {
+  height: 60px;
+  width: 600px;
+  align-items: center;
+  text-align: center;
+  color: #FFD23F;
   
-}
+ 
+
+  }
+  }
+
+
 
          .main-container {
             padding-top: 100px;
             min-height: 100vh;
-            position: relative;
+           
         }
  
   
         /* Header section */
         .header-section {
-            padding: 50px;
+            padding: 100px;
             position: relative;
             z-index: 2;
         }
@@ -918,6 +969,7 @@ button:hover {
             margin-bottom: 20px;
             line-height: 1.2;
             text-align: left;
+            margin-left: 28px;
         }
  
         .title-gold {
@@ -932,13 +984,13 @@ button:hover {
         /* Live streaming widget */
         .live-widget {
             position: absolute;
-            top: 50px;
-            right: 60px;
+            top: 80px;
+            right: 30px;
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid #ffd700;
             border-radius: 20px;
             padding: 20px;
-            width: 360px;
+            width: 400px;
             height: 200px;
             backdrop-filter: blur(10px);
             animation: pulse-border 2s infinite;
@@ -1009,11 +1061,13 @@ button:hover {
         }
  
         /* Content sections */
+        
         .content-grid {
+         
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
-            padding: 50px;
+            padding: 0px;
             position: relative;
             z-index: 2;
         }
