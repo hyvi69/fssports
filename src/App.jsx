@@ -437,7 +437,7 @@ const handleClick2 = () => {
       <a href="https://www.instagram.com/fs.sports.padel?igsh=MTZwcDZ1YzFkaGtwbQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="icon instagram">
         <img src={instagram} alt="Instagram" style={{ width: '40px', height: '40px' }} />
       </a>
-      <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="icon facebook">
+      <a href="https://www.facebook.com/share/16dk169Py5/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="icon facebook">
         <img src={facebook} alt="Facebook" style={{ width: '40px', height: '40px' }} />
       </a>
       <a href="https://youtube.com/@fs-sports433?si=H6MFKqM7_avDNRjp" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="icon youtube">
